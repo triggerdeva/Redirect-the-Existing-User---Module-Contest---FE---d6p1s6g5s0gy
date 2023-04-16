@@ -1,20 +1,23 @@
-import React from 'react'
-import '../styles/App.css';
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import LoginForm from './LoginForm';
-import Dashboard from './Dashboard';
+import LoginForm from "./LoginForm";
+import Dashboard from "./Dashboard";
 
 const App = () => {
-
   return (
     <div id="main">
       <Router>
-          <LoginForm />
-          <Dashboard />
+        <Switch>
+          <Route exact path="/">
+            <LoginForm />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+        </Switch>
       </Router>
     </div>
-  )
-}
-
+  );
+};
 
 export default App;
